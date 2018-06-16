@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/PfeifferH/ImageFinderBot#readme",
   "dependencies": {
+    "discord.js": "^11.3.2",
     "pixelmatch": "^4.0.2"
   }
 }
