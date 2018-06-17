@@ -36,9 +36,24 @@ client.on("message", async message => {
   // This event will run on every single message received, from any channel or DM.
   
   const attachments = message.attachments.array()
+  const allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif']
 
   // Returns a response if an embed is attached
-  if(attachments.length !== 0) message.channel.send('Image Attached')
+  if(attachments.length !== 0) {
+    let type = ''
+    let done = false
+    attachments.forEach(element => {
+      type = element.filename.split('.')[1]
+      console.log(type)
+      allowedFileTypes.forEach(fileType => {
+        console.log(fileType)
+        if(type && type === fileType) done = true
+        console.log(done)
+      }) 
+    })
+
+    if(done) message.channel.send('Image Attached')
+  }  
   
 
   // It's good practice to ignore other bots. This also makes your bot ignore itself
