@@ -35,6 +35,12 @@ client.on("guildDelete", guild => {
 client.on("message", async message => {
   // This event will run on every single message received, from any channel or DM.
   
+  const attachments = message.attachments.array()
+
+  // Returns a response if an embed is attached
+  if(attachments.length !== 0) message.channel.send('Image Attached')
+  
+
   // It's good practice to ignore other bots. This also makes your bot ignore itself
   // and not get into a spam loop (we call that "botception").
   if(message.author.bot) return;
@@ -68,6 +74,8 @@ client.on("message", async message => {
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
+
+  else message.channel.send("No command specified")
   
   
 });
