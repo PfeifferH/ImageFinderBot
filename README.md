@@ -7,7 +7,7 @@ Used code from https://gist.github.com/eslachance/3349734a98d30011bb202f47342601
 
 ### Make sure the necessary dependencies are installed by running `npm install <package name>`.
   
-  packages: 
+  Packages: 
   
     discord.js
     pixelmatch
